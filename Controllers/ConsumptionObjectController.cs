@@ -29,7 +29,7 @@ namespace WebService.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ConsumptionObject>> GetConsumptionObject(int id)
         {
-            var consumptionObject = await _context.ConsumptionObject.Include(b => b.ElectricityMeteringPoint).FirstOrDefaultAsync(i => i.ID == id);
+            var consumptionObject = await _context.ConsumptionObject.FindAsync(id);
 
             if (consumptionObject == null)
             {
