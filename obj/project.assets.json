@@ -7363,11 +7363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NVISION\\_Test\\TestWebService\\WebService.csproj",
+      "projectUniqueName": "D:\\NVISION\\_Test\\WebService\\WebService.csproj",
       "projectName": "WebService",
-      "projectPath": "D:\\NVISION\\_Test\\TestWebService\\WebService.csproj",
+      "projectPath": "D:\\NVISION\\_Test\\WebService\\WebService.csproj",
       "packagesPath": "C:\\Users\\adm_RBerezhnoy\\.nuget\\packages\\",
-      "outputPath": "D:\\NVISION\\_Test\\TestWebService\\obj\\",
+      "outputPath": "D:\\NVISION\\_Test\\WebService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adm_RBerezhnoy\\AppData\\Roaming\\NuGet\\NuGet.Config"
