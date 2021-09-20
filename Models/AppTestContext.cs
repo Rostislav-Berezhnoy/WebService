@@ -88,7 +88,7 @@ namespace WebService.Models
                 b.HasData(new ConsumptionObject[] 
                 {
                     new ConsumptionObject {ID=1, Name="ПС 110/10 Весна", Address="Москва"},
-                    new ConsumptionObject {ID=2, Name="ПС 220/20 Очень", Address="Воронеж"}
+                    new ConsumptionObject {ID=2, Name="ПС 220/20 Осень", Address="Воронеж"}
                 });
             });
         }
