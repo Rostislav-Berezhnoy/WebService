@@ -22,6 +22,7 @@ namespace WebService
         {
 
             services.AddControllers();
+            services.AddCors();
             services.AddDbContext<AppTestContext>(opt => opt.UseInMemoryDatabase("WebService"));
             services.AddSwaggerGen(c =>
             {
@@ -37,6 +38,8 @@ namespace WebService
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebService v1"));
             }
+
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseHttpsRedirection();
 
