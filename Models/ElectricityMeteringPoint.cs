@@ -8,6 +8,7 @@ namespace WebService.Models
     {
         
         public int? ConsumptionObjectID { get; set; }
+        public string ConsumptionObjectName { get; set; }
 
         [JsonIgnore]
         public virtual ConsumptionObject ConsumptionObject { get; set; }

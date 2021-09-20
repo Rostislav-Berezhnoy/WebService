@@ -22,7 +22,13 @@ namespace WebService.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ElectricityMeteringPoint>>> GetElectricityMeteringPoint()
         {
-            return await _context.ElectricityMeteringPoint.ToListAsync();
+            var items = _context.ElectricityMeteringPoint;
+            foreach (var item in items)
+            {
+                item.ConsumptionObjectName = _context.ConsumptionObject.Where(c => c.ID == item.ConsumptionObjectID).FirstOrDefault().Name;
+            }
+            
+            return await items.ToListAsync();
         }
 
         // GET: api/ElectricityMeteringPoint/5

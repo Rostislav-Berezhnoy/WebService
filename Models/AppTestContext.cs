@@ -34,6 +34,7 @@ namespace WebService.Models
                 .HasOne(a => a.VoltageTransformers).WithOne(b => b.ElectricityMeteringPoint)
                 .HasForeignKey<VoltageTransformer>(e => e.ElectricityMeteringPointID);
 
+
             /* Наполнение тестовыми данными */
 
             //Расчетный прибор учета
@@ -88,7 +89,7 @@ namespace WebService.Models
                 b.HasData(new ConsumptionObject[] 
                 {
                     new ConsumptionObject {ID=1, Name="ПС 110/10 Весна", Address="Москва"},
-                    new ConsumptionObject {ID=2, Name="ПС 220/20 Осень", Address="Воронеж"}
+                    new ConsumptionObject {ID=2, Name="ПС 220/20 Оcень", Address="Воронеж"}
                 });
             });
         }
