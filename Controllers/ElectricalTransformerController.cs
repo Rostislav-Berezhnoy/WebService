@@ -23,23 +23,30 @@ namespace WebService.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ElectricalTransformer>>> GetElectricalTransformer(int id, int? ConsumptionObjectID, bool WithExpiredDate)
         {
+            
+            var items = _context.ElectricalTransformer;
+            foreach (var item in items)
+            {
+                item.ElectricityMeteringPointName = _context.ElectricityMeteringPoint.Where(c => c.ID == item.ElectricityMeteringPointID).FirstOrDefault().Name;
+            }
+
             if (ConsumptionObjectID != null && !WithExpiredDate)
             {
-                return await _context.ElectricalTransformer.Where(c => 
+                return await items.Where(c => 
                     c.ElectricityMeteringPoint.ConsumptionObject.ID == ConsumptionObjectID).ToListAsync();
 
             } else if (ConsumptionObjectID == null && WithExpiredDate)
             {
-                return await _context.ElectricalTransformer.Where(c => 
+                return await items.Where(c => 
                     c.VerificationDate < DateTime.Now).ToListAsync();
 
             } else if (ConsumptionObjectID != null && WithExpiredDate)
             {
-                return await _context.ElectricalTransformer.Where(c => 
+                return await items.Where(c => 
                     c.ElectricityMeteringPoint.ConsumptionObject.ID == ConsumptionObjectID && c.VerificationDate < DateTime.Now).ToListAsync();
             }
 
-            return await _context.ElectricalTransformer.ToListAsync();
+            return await items.ToListAsync();
         }
 
         // GET: api/ElectricalTransformer/5

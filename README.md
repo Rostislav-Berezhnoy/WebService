@@ -105,6 +105,7 @@
 [
     {
         "electricityMeteringPointID": 1,
+        "electricityMeteringPointName": "Точка измерения 1",
         "id": 1,
         "no": "123",
         "type": "A1",
@@ -112,6 +113,7 @@
     },
     {
         "electricityMeteringPointID": 2,
+        "electricityMeteringPointName": "Точка измерения 2",
         "id": 2,
         "no": "456",
         "type": "B1",
@@ -129,6 +131,7 @@
 [
     {
         "electricityMeteringPointID": 1,
+        "electricityMeteringPointName": "Точка измерения 1",
         "transformationRatio": 1.1,
         "id": 1,
         "no": "123",
@@ -137,6 +140,7 @@
     },
     {
         "electricityMeteringPointID": 2,
+        "electricityMeteringPointName": "Точка измерения 2",
         "transformationRatio": 1.2,
         "id": 2,
         "no": "456",
@@ -155,6 +159,7 @@
 [
     {
         "electricityMeteringPointID": 1,
+        "electricityMeteringPointName": "Точка измерения 1",
         "transformationRatio": 1.1,
         "id": 1,
         "no": "123",
@@ -163,6 +168,7 @@
     },
     {
         "electricityMeteringPointID": 2,
+        "electricityMeteringPointName": "Точка измерения 2",
         "transformationRatio": 1.2,
         "id": 2,
         "no": "456",
