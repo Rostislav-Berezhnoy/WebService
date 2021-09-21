@@ -41,36 +41,36 @@ namespace WebService.Models
             modelBuilder.Entity<MeteringDevice>().HasData(
                 new MeteringDevice[] 
                 {
-                    new MeteringDevice {ID=1, No="123", StartDate=new DateTime(2018, 12, 01)},
-                    new MeteringDevice {ID=2, No="456", StartDate=new DateTime(2018, 08, 15)},
-                    new MeteringDevice {ID=3, No="789", StartDate=new DateTime(2019, 03, 18)}
+                    new MeteringDevice {ID=1, No="445566000", StartDate=new DateTime(2018, 12, 01)},
+                    new MeteringDevice {ID=2, No="778899000", StartDate=new DateTime(2018, 08, 15)},
+                    new MeteringDevice {ID=3, No="112233000", StartDate=new DateTime(2019, 03, 18)}
                 });
 
             //Счетчик электрической энергии
             modelBuilder.Entity<ElectricityMeter>().HasData(
                 new ElectricityMeter[] 
                 {
-                    new ElectricityMeter {ID=1, No="123", Type="A1", VerificationDate=new DateTime(2020, 01, 13), ElectricityMeteringPointID=1},
-                    new ElectricityMeter {ID=2, No="456", Type="B1", VerificationDate=new DateTime(2021, 02, 14), ElectricityMeteringPointID=2},
-                    new ElectricityMeter {ID=3, No="789", Type="C1", VerificationDate=new DateTime(2022, 03, 15), ElectricityMeteringPointID=3},
+                    new ElectricityMeter {ID=1, No="112233000", Type="A1", VerificationDate=new DateTime(2020, 01, 13), ElectricityMeteringPointID=1},
+                    new ElectricityMeter {ID=2, No="445566000", Type="B1", VerificationDate=new DateTime(2021, 02, 14), ElectricityMeteringPointID=2},
+                    new ElectricityMeter {ID=3, No="778899000", Type="C1", VerificationDate=new DateTime(2022, 03, 15), ElectricityMeteringPointID=3},
                 });
 
             //Трансформатор тока
             modelBuilder.Entity<ElectricalTransformer>().HasData(
                 new ElectricalTransformer[] 
                 {
-                    new ElectricalTransformer {ID=1, No="123", Type="A1", VerificationDate=new DateTime(2020, 01, 13), TransformationRatio=1.1f, ElectricityMeteringPointID=1},
-                    new ElectricalTransformer {ID=2, No="456", Type="B1", VerificationDate=new DateTime(2021, 02, 14), TransformationRatio=1.2f, ElectricityMeteringPointID=2},
-                    new ElectricalTransformer {ID=3, No="789", Type="C1", VerificationDate=new DateTime(2022, 03, 15), TransformationRatio=1.3f, ElectricityMeteringPointID=3},
+                    new ElectricalTransformer {ID=1, No="778899000", Type="D2", VerificationDate=new DateTime(2020, 04, 16), TransformationRatio=1.100f, ElectricityMeteringPointID=1},
+                    new ElectricalTransformer {ID=2, No="445566000", Type="F2", VerificationDate=new DateTime(2021, 05, 17), TransformationRatio=1.200f, ElectricityMeteringPointID=2},
+                    new ElectricalTransformer {ID=3, No="112233000", Type="G2", VerificationDate=new DateTime(2022, 06, 18), TransformationRatio=1.300f, ElectricityMeteringPointID=3},
                 });
 
             //Трансформатор напряжения
             modelBuilder.Entity<VoltageTransformer>().HasData(
                 new VoltageTransformer[] 
                 {
-                    new VoltageTransformer {ID=1, No="123", Type="A1", VerificationDate=new DateTime(2020, 01, 13), TransformationRatio=1.1f, ElectricityMeteringPointID=1},
-                    new VoltageTransformer {ID=2, No="456", Type="B1", VerificationDate=new DateTime(2021, 02, 14), TransformationRatio=1.2f, ElectricityMeteringPointID=2},
-                    new VoltageTransformer {ID=3, No="789", Type="C1", VerificationDate=new DateTime(2022, 03, 15), TransformationRatio=1.3f, ElectricityMeteringPointID=3},
+                    new VoltageTransformer {ID=1, No="445566000", Type="H3", VerificationDate=new DateTime(2020, 07, 19), TransformationRatio=2.400f, ElectricityMeteringPointID=1},
+                    new VoltageTransformer {ID=2, No="112233000", Type="J3", VerificationDate=new DateTime(2021, 08, 20), TransformationRatio=2.500f, ElectricityMeteringPointID=2},
+                    new VoltageTransformer {ID=3, No="778899000", Type="K3", VerificationDate=new DateTime(2022, 09, 21), TransformationRatio=2.600f, ElectricityMeteringPointID=3},
                 });
 
             //Точка измерения электроэнергии
@@ -88,8 +88,8 @@ namespace WebService.Models
             {
                 b.HasData(new ConsumptionObject[] 
                 {
-                    new ConsumptionObject {ID=1, Name="ПС 110/10 Весна", Address="Москва"},
-                    new ConsumptionObject {ID=2, Name="ПС 220/20 Оcень", Address="Воронеж"}
+                    new ConsumptionObject {ID=1, Name="ПС 110/10 Весна", Address="Москва, ул. Маяковского 4, стр. 2"},
+                    new ConsumptionObject {ID=2, Name="ПС 220/20 Оcень", Address="Воронеж, ул. Есенина 2, стр. 4"}
                 });
             });
         }
