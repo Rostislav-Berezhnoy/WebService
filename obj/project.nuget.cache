@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vvEvNafIFdiLQRGoeCzNv0UXIsXPH3gOUGvmLUj5D18/7kJ2rreTy4E4kMFSH1lv70Sgx0vdTANSmFOzr4C1+g==",
+  "dgSpecHash": "DO7Ev2S60fZOmoY8G8h+M77G8owygg2nPsjTrNaoNL89PWpAMtS1leVGT/zTMxEuAkKXT6xSnqQrOphUkzJDDw==",
   "success": true,
-  "projectFilePath": "D:\\NVISION\\_Test\\WebService\\WebService.csproj",
+  "projectFilePath": "D:\\NVISION\\_Repositories\\_Test\\WebService\\WebService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adm_RBerezhnoy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\adm_RBerezhnoy\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

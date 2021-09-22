@@ -15,6 +15,6 @@ namespace WebService.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Verification Date")]
-        public DateTime VerificationDate { get; set; }
+        public DateTime? VerificationDate { get; set; }
     }
 }

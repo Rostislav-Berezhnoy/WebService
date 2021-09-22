@@ -8,6 +8,6 @@ namespace WebService.Models
         public int? ElectricityMeteringPointID { get; set; }
         [JsonIgnore]
         public ElectricityMeteringPoint ElectricityMeteringPoint { get; set; }
-        public float TransformationRatio { get; set; }
+        public float? TransformationRatio { get; set; }
     }
 }

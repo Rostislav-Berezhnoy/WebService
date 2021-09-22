@@ -9,6 +9,6 @@ namespace WebService.Models
         
         [JsonIgnore]
         public virtual ElectricityMeteringPoint ElectricityMeteringPoint { get; set; }
-        public float TransformationRatio { get; set; }
+        public float? TransformationRatio { get; set; }
     }
 }

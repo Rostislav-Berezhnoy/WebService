@@ -23,7 +23,7 @@ namespace WebService.Controllers
         public async Task<ActionResult<IEnumerable<MeteringDevice>>> GetMeteringDevice(int id, int? year)
         {
             if (year != null){
-               return await _context.MeteringDevice.Where(c => c.StartDate.Year == year).ToListAsync();
+               return await _context.MeteringDevice.Where(c => c.StartDate.Value.Year == year).ToListAsync();
             }
             
             return await _context.MeteringDevice.ToListAsync();
