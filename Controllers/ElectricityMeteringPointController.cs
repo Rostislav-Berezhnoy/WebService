@@ -22,7 +22,11 @@ namespace WebService.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ElectricityMeteringPoint>>> GetElectricityMeteringPoint()
         {
-            var items = _context.ElectricityMeteringPoint;
+            var items = _context.ElectricityMeteringPoint
+                .Include(b => b.ElectricalTransformers)
+                .Include(b => b.ElectricityMeters)
+                .Include(b => b.VoltageTransformers);
+
             foreach (var item in items)
             {
                 item.ConsumptionObjectName = _context.ConsumptionObject.Where(c => c.ID == item.ConsumptionObjectID).FirstOrDefault().Name;
@@ -36,9 +40,9 @@ namespace WebService.Controllers
         public async Task<ActionResult<ElectricityMeteringPoint>> GetElectricityMeteringPoint(int id)
         {
             var electricityMeteringPoint = await _context.ElectricityMeteringPoint
-                .Include(b => b.ElectricalTransformer)
-                .Include(b => b.ElectricityMeter)
-                .Include(b => b.VoltageTransformer)
+                .Include(b => b.ElectricalTransformers)
+                .Include(b => b.ElectricityMeters)
+                .Include(b => b.VoltageTransformers)
                 .FirstOrDefaultAsync(i => i.ID == id);
 
             if (electricityMeteringPoint == null)
@@ -46,6 +50,8 @@ namespace WebService.Controllers
                 return NotFound();
             }
 
+            electricityMeteringPoint.ConsumptionObjectName = _context.ConsumptionObject.Where(c => c.ID == electricityMeteringPoint.ConsumptionObjectID).FirstOrDefault().Name;
+            
             return electricityMeteringPoint;
         }
 
@@ -85,15 +91,22 @@ namespace WebService.Controllers
         {
         
             _context.ElectricityMeteringPoint.Add(electricityMeteringPoint);
+            
+            var point = electricityMeteringPoint;
+            point.ConsumptionObjectName = _context.ConsumptionObject.Where(c => c.ID == electricityMeteringPoint.ConsumptionObjectID).FirstOrDefault().Name;;
 
-            var VoltageTransformer = electricityMeteringPoint.VoltageTransformer.First();
+            var VoltageTransformer = electricityMeteringPoint.VoltageTransformers;
             VoltageTransformer.ElectricityMeteringPointID = electricityMeteringPoint.ID;
+            VoltageTransformer.ElectricityMeteringPointName = electricityMeteringPoint.Name;
 
-            var ElectricalTransformer = electricityMeteringPoint.ElectricalTransformer.First();
+            var ElectricalTransformer = electricityMeteringPoint.ElectricalTransformers;
             ElectricalTransformer.ElectricityMeteringPointID = electricityMeteringPoint.ID;
+            ElectricalTransformer.ElectricityMeteringPointName = electricityMeteringPoint.Name;
 
-            var ElectricityMeter = electricityMeteringPoint.ElectricityMeter.First();
+            var ElectricityMeter = electricityMeteringPoint.ElectricityMeters;
             ElectricityMeter.ElectricityMeteringPointID = electricityMeteringPoint.ID;
+            ElectricityMeter.ElectricityMeteringPointName = electricityMeteringPoint.Name;
+
 
             await _context.SaveChangesAsync();
 

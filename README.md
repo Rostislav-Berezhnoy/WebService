@@ -11,23 +11,23 @@
 
 ```json
 {
-    "ElectricityMeter": [{
+    "ElectricityMeters": {
         "No": "111",
         "Type": "A1",
         "VerificationDate": "2018-02-01"
-    }],
-    "VoltageTransformer": [{
+    },
+    "VoltageTransformers": {
         "No": "222",
         "Type": "B1",
         "VerificationDate": "2018-02-01",
         "TransformationRatio": 152.4
-    }],
-    "ElectricalTransformer": [{
+    },
+    "ElectricalTransformers": {
         "No": "333",
         "Type": "C1",
         "VerificationDate": "2018-02-01",
         "TransformationRatio": 152.4
-    }],
+    },
     "name": "Точка измерения 5",
     "consumptionObjectID": 1
 }
@@ -38,38 +38,36 @@
 ```json
 {
     "consumptionObjectID": 1,
-    "voltageTransformer": [
-        {
-            "electricityMeteringPointID": 4,
-            "transformationRatio": 152.4,
-            "id": 1,
-            "no": "222",
-            "type": "B1",
-            "verificationDate": "2018-02-01T00:00:00"
-        }
-    ],
-    "electricalTransformer": [
-        {
-            "electricityMeteringPointID": 4,
-            "transformationRatio": 152.4,
-            "id": 1,
-            "no": "333",
-            "type": "C1",
-            "verificationDate": "2018-02-01T00:00:00"
-        }
-    ],
-    "electricityMeter": [
-        {
-            "electricityMeteringPointID": 4,
-            "id": 4,
-            "no": "111",
-            "type": "A1",
-            "verificationDate": "2018-02-01T00:00:00"
-        }
-    ],
-    "meteringDevice": [],
+    "consumptionObjectName": "ПС 110/10 Весна",
+    "voltageTransformers": {
+        "electricityMeteringPointID": 4,
+        "transformationRatio": 152.4,
+        "id": 4,
+        "no": "222",
+        "type": "B1",
+        "electricityMeteringPointName": "Точка измерения 5",
+        "verificationDate": "2018-02-01T00:00:00"
+    },
+    "electricalTransformers": {
+        "electricityMeteringPointID": 4,
+        "transformationRatio": 152.4,
+        "id": 4,
+        "no": "333",
+        "type": "C1",
+        "electricityMeteringPointName": "Точка измерения 5",
+        "verificationDate": "2018-02-01T00:00:00"
+    },
+    "electricityMeters": {
+        "electricityMeteringPointID": 4,
+        "id": 4,
+        "no": "111",
+        "type": "A1",
+        "electricityMeteringPointName": "Точка измерения 5",
+        "verificationDate": "2018-02-01T00:00:00"
+    },
     "id": 4,
     "name": "Точка измерения 5"
+}
 ```
 
 По завершению запроса также, помимо *ElectricityMeteringPoint*, будут отдельно созданы и записаны три новых сущности *(voltageTransformer, electricalTransformer, electricityMeter)*
@@ -83,15 +81,18 @@
 [
     {
         "id": 1,
-        "no": "123",
-        "startDate": "2018-12-01T00:00:00",
-        "electricityMeteringPoint": []
+        "no": "445566000",
+        "startDate": "2018-12-01T00:00:00"
     },
     {
         "id": 2,
-        "no": "456",
-        "startDate": "2018-08-15T00:00:00",
-        "electricityMeteringPoint": []
+        "no": "778899000",
+        "startDate": "2018-08-15T00:00:00"
+    },
+    {
+        "id": 3,
+        "no": "112233000",
+        "startDate": "2019-03-18T00:00:00"
     }
 ]
 ```
@@ -105,18 +106,18 @@
 [
     {
         "electricityMeteringPointID": 1,
-        "electricityMeteringPointName": "Точка измерения 1",
         "id": 1,
-        "no": "123",
+        "no": "112233000",
         "type": "A1",
+        "electricityMeteringPointName": "Точка измерения 1",
         "verificationDate": "2020-01-13T00:00:00"
     },
     {
         "electricityMeteringPointID": 2,
-        "electricityMeteringPointName": "Точка измерения 2",
         "id": 2,
-        "no": "456",
+        "no": "445566000",
         "type": "B1",
+        "electricityMeteringPointName": "Точка измерения 2",
         "verificationDate": "2021-02-14T00:00:00"
     }
 ]
@@ -131,21 +132,21 @@
 [
     {
         "electricityMeteringPointID": 1,
-        "electricityMeteringPointName": "Точка измерения 1",
-        "transformationRatio": 1.1,
+        "transformationRatio": 2.4,
         "id": 1,
-        "no": "123",
-        "type": "A1",
-        "verificationDate": "2020-01-13T00:00:00"
+        "no": "445566000",
+        "type": "H3",
+        "electricityMeteringPointName": "Точка измерения 1",
+        "verificationDate": "2020-07-19T00:00:00"
     },
     {
         "electricityMeteringPointID": 2,
-        "electricityMeteringPointName": "Точка измерения 2",
-        "transformationRatio": 1.2,
+        "transformationRatio": 2.5,
         "id": 2,
-        "no": "456",
-        "type": "B1",
-        "verificationDate": "2021-02-14T00:00:00"
+        "no": "112233000",
+        "type": "J3",
+        "electricityMeteringPointName": "Точка измерения 2",
+        "verificationDate": "2021-08-20T00:00:00"
     }
 ]
 ```
@@ -159,21 +160,21 @@
 [
     {
         "electricityMeteringPointID": 1,
-        "electricityMeteringPointName": "Точка измерения 1",
         "transformationRatio": 1.1,
         "id": 1,
-        "no": "123",
-        "type": "A1",
-        "verificationDate": "2020-01-13T00:00:00"
+        "no": "778899000",
+        "type": "D2",
+        "electricityMeteringPointName": "Точка измерения 1",
+        "verificationDate": "2020-04-16T00:00:00"
     },
     {
         "electricityMeteringPointID": 2,
-        "electricityMeteringPointName": "Точка измерения 2",
         "transformationRatio": 1.2,
         "id": 2,
-        "no": "456",
-        "type": "B1",
-        "verificationDate": "2021-02-14T00:00:00"
+        "no": "445566000",
+        "type": "F2",
+        "electricityMeteringPointName": "Точка измерения 2",
+        "verificationDate": "2021-05-17T00:00:00"
     }
 ]
 ```

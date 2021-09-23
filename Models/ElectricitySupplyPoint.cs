@@ -11,6 +11,8 @@ namespace WebService.Models
         
         [JsonIgnore]
         public virtual ConsumptionObject ConsumptionObject { get; set; }
+
+        [JsonIgnore]
         public ICollection<MeteringDevice> MeteringDevice { get; set; } = new List<MeteringDevice>();
     }
 }

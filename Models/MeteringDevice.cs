@@ -9,6 +9,8 @@ namespace WebService.Models
     public class MeteringDevice
     {
         public int ID { get; set; }
+        
+        [Required]
         public string No { get; set; }
 
         [DataType(DataType.Date)]
@@ -21,6 +23,8 @@ namespace WebService.Models
 
         [JsonIgnore]
         public virtual ElectricitySupplyPoint ElectricitySupplyPoints { get; set; }
+
+        [JsonIgnore]
         public ICollection<ElectricityMeteringPoint> ElectricityMeteringPoint { get; set; } = new List<ElectricityMeteringPoint>();
     }
 }

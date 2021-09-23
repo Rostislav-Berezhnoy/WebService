@@ -1,12 +1,13 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebService.Models
 {
     public abstract class Device
     {
         public int ID { get; set; }
+
+        [Required]
         public string No { get; set; }
         public string Type { get; set; }
 
